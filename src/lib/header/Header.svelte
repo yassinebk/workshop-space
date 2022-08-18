@@ -1,124 +1,107 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import logo from './svelte-logo.svg';
 </script>
 
 <header>
-	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a>
-	</div>
-
-	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.url.pathname === '/about'}>
-				<a sveltekit:prefetch href="/about">About</a>
-			</li>
-			<li class:active={$page.url.pathname === '/todos'}>
-				<a sveltekit:prefetch href="/todos">Todos</a>
-			</li>
+	<nav class="navbar">
+		<div class="navbar-sides logo-ctr">
+			<a href="/">
+				<p>Full stack Devini</p>
+			</a>
+		</div>
+		<div class="seperator" />
+		<ul class="navigations">
+			<li><a href="/">Home </a></li>
+			<li><a href="/workshops">Workshop</a></li>
+			<li><a href="/faq">FAQ</a></li>
+			<li><a href="/ressources">Ressources</a></li>
 		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
+		<div class="action-buttons navbar-sides">
+			<button class="btn">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="icon icon-tabler icon-tabler-phone-call"
+					width="32"
+					height="32"
+					viewBox="0 0 24 24"
+					stroke-width="1"
+					stroke="#000000"
+					fill="none"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+					<path
+						d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
+					/>
+					<path d="M15 7a2 2 0 0 1 2 2" />
+					<path d="M15 3a6 6 0 0 1 6 6" />
+				</svg>
+				<p style="margin-left:6px;">Contact Instructor</p>
+			</button>
+		</div>
 	</nav>
-
-	<div class="corner">
-		<!-- TODO put something else here? github link? -->
-	</div>
 </header>
 
 <style>
-	header {
+	.navigations {
 		display: flex;
+		flex: 3;
+		font-size: 1.15rem;
+		font-weight: medium;
+		justify-content: center;
+	}
+
+	.navigations li {
+		margin: 0 2rem;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all ease-in-out 200ms;
+	}
+
+	.navigations li:hover {
+		color: var(--secondary);
+		transform: scale(1.1);
+	}
+
+	.action-buttons {
+	}
+
+	.navbar {
+		width: 100vw;
 		justify-content: space-between;
-	}
-
-	.corner {
-		width: 3em;
-		height: 3em;
-	}
-
-	.corner a {
+		padding: 1rem 3rem;
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
 	}
 
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
+	.navbar-sides {
+		flex: 1;
 	}
 
-	nav {
+	.logo-ctr {
 		display: flex;
-		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
-	}
-
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
-
-	path {
-		fill: var(--background);
-	}
-
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
 		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
 	}
 
-	li {
-		position: relative;
-		height: 100%;
+	.logo-ctr p {
+		margin-left: 16px;
+		font-size: 2.25rem;
+		font-weight: bold;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-image: -webkit-linear-gradient(to top, #8a2387, #e94057, #f27121);
+		background-image: linear-gradient(30deg, #8a2387, #e94057, #f27121);
+
+		animation: gradient-camelion infinite 10s alternate-reverse;
+		transition: ease-in-out all;
 	}
 
-	li.active::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--accent-color);
-	}
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 1em;
-		color: var(--heading-color);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
-
-	a:hover {
-		color: var(--accent-color);
+	@keyframes gradient-camelion {
+		to {
+			background-position-y: 50vh;
+			background-image: linear-gradient(30deg, #fc00ff, #00dbde);
+		}
 	}
 </style>
