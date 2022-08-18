@@ -1,5 +1,6 @@
 <script lang="ts">
-	import logo from './svelte-logo.svg';
+	import { dataset_dev } from 'svelte/internal';
+	import AuthProfile from './AuthProfile.svelte';
 </script>
 
 <header>
@@ -8,21 +9,21 @@
 			<a href="/">
 				<p>Full stack Devini</p>
 			</a>
+			<div class="seperator" />
 		</div>
-		<div class="seperator" />
 		<ul class="navigations">
 			<li><a href="/">Home </a></li>
 			<li><a href="/workshops">Workshop</a></li>
 			<li><a href="/faq">FAQ</a></li>
 			<li><a href="/ressources">Ressources</a></li>
 		</ul>
-		<div class="action-buttons navbar-sides">
+		<div class=" action-buttons">
 			<button class="btn">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="icon icon-tabler icon-tabler-phone-call"
-					width="32"
-					height="32"
+					width="24"
+					height="24"
 					viewBox="0 0 24 24"
 					stroke-width="1"
 					stroke="#000000"
@@ -39,6 +40,7 @@
 				</svg>
 				<p style="margin-left:6px;">Contact Instructor</p>
 			</button>
+			<AuthProfile />
 		</div>
 	</nav>
 </header>
@@ -46,7 +48,6 @@
 <style>
 	.navigations {
 		display: flex;
-		flex: 3;
 		font-size: 1.15rem;
 		font-weight: medium;
 		justify-content: center;
@@ -65,23 +66,30 @@
 	}
 
 	.action-buttons {
+		max-width: 500px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 
 	.navbar {
 		width: 100vw;
+		max-width: 100vw;
 		justify-content: space-between;
-		padding: 1rem 3rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		padding-top: 2rem;
 		display: flex;
 		align-items: center;
 	}
 
 	.navbar-sides {
-		flex: 1;
 	}
 
 	.logo-ctr {
 		display: flex;
 		align-items: center;
+		max-width: 400px;
 	}
 
 	.logo-ctr p {
