@@ -1,5 +1,7 @@
 <script lang="ts">
 	let user: any;
+	import IntroSection from '$lib/homepage/intro-section.svelte';
+	import LessonCard from '$lib/lesson-card/LessonCard.svelte';
 </script>
 
 <svelte:head>
@@ -7,11 +9,11 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
+<div class="v-section-spacer-md" />
 <main>
-	<h1 class="heading">Hello there</h1>
-	{#if !user}
-		<a title="Discord OAuth2" href="api/auth">Authenticate via Discord</a>
-	{/if}
+	<IntroSection />
+	<div class="v-section-spacer-md" />
+	<LessonCard />
 </main>
 
 <style>

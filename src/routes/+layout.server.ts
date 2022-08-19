@@ -1,4 +1,6 @@
+import { initializeApiClient } from "../lib/sanity/client";
 import * as cookie from "cookie";
+import type { DiscordUser } from "src/types/Models";
 import type { LayoutServerLoad } from './$types';
 
 const DISCORD_API_URL = import.meta.env.VITE_DISCORD_API_URL;
@@ -6,8 +8,38 @@ const HOST = import.meta.env.VITE_HOST;
 
 /** @type {import('@sveltejs/kit').Handle} */
 
+const upsertUserIntoDB = async (response: DiscordUser) => {
+    const client = initializeApiClient();
+    const users = await client.fetch(`*[_type=="participant" && discord_id=="${response.id}"]`);
+    // console.log('user', user)
+    // const res = await client.delete({ query: `*[_type=="participant" && discord_id=="${response.id}"]` })
+    // console.log(res);
+    if (users && users.length === 0) {
+        const newParticipant = {
+            _type: 'participant',
+            discord_id: response.id,
+            username: response.username,
+            last_visited: new Date().toISOString(),
+            points: 0,
+            admin_summon: {
+                summoned_at: null,
+                has_summoned: false
+            },
+            confirmed: false
+        }
+        try {
+            const res = await client.create(newParticipant);
+            return res;
+        }
+        catch (error) {
+            console.log('errror', error)
+        }
+
+    }
+
+    return users[0];
+}
 export const load: LayoutServerLoad = async ({ request }) => {
-    // console.log("request", request);
     const cookies = cookie.parse(request.headers.get('cookie') || '');
 
     // if only refresh token is found, then access token has expired. perform a refresh on it.
@@ -22,11 +54,16 @@ export const load: LayoutServerLoad = async ({ request }) => {
             });
 
             // returns a discord user if JWT was valid
-            const response = await request.json();
+            const response: DiscordUser = await request.json();
+
+
 
             if (response.id) {
+                let dbUser = await upsertUserIntoDB(response);
                 return {
                     user: {
+                        ...dbUser,
+
                         // only include properties needed client-side —
                         // exclude anything else attached to the user
                         // like access tokens etc
@@ -44,12 +81,14 @@ export const load: LayoutServerLoad = async ({ request }) => {
             headers: { 'Authorization': `Bearer ${cookies.disco_access_token}` }
         });
 
+
         // returns a discord user if JWT was valid
         const response = await request.json();
-
         if (response.id) {
+            let dbUser = await upsertUserIntoDB(response);
             return {
                 user: {
+                    ...dbUser,
                     // only include properties needed client-side —
                     // exclude anything else attached to the user
                     // like access tokens etc
@@ -60,6 +99,7 @@ export const load: LayoutServerLoad = async ({ request }) => {
             }
         }
     }
+
     return {
         user: null
     }
