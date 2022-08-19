@@ -7,16 +7,16 @@
 		/>
 		<div class="icon-bubble" />
 	</div>
-	<div class="v-spacer-md" />
+	<div class="v-spacer-sm" />
 	<div class="lesson-info-text">
 		<h3>Lesson One Text should be here</h3>
 		<div class="v-spacer-sm" />
 		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, possimus nam voluptate</p>
 	</div>
 
-	<div class="v-spacer-md" />
+	<div class="v-spacer-sm" />
 	<div class="line-sep" />
-	<div class="v-spacer-md" />
+	<div class="v-spacer-sm" />
 	<div class="lesson-info-numbers">
 		<div class="info-part">
 			<svg
@@ -64,7 +64,7 @@
 		</div>
 	</div>
 
-	<div class="v-spacer-lg" />
+	<div class="v-spacer-md" />
 	<div class="action-buttons">
 		<button class="btn-white">Read</button>
 	</div>
@@ -75,12 +75,13 @@
 		display: flex;
 		flex-direction: column;
 		padding: 1rem 2rem;
-		width: 500px;
+		width: 400px;
 		align-items: center;
+		font-size:10px;
 	}
 
 	.lesson-img-ctr {
-		width: 400px;
+		width: 300px;
 		max-height: 450px;
 		border-radius: 30px;
 		overflow: hidden;
@@ -93,8 +94,8 @@
 	.icon-bubble {
 	}
 	.lesson-info-text {
-		padding-left: 32px;
-		padding-right: 32px;
+		padding-left: 16px;
+		padding-right: 16px;
 	}
 
 	.lesson-info-text h3 {
@@ -147,7 +148,7 @@
 	.btn-white {
 		width: 85%;
 		margin: 0 auto;
-		height: 50px;
+		height: 40px;
 		border-radius: 30px;
 		background-color: transparent;
 		color: rgb(146, 146, 146);

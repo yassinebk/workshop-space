@@ -46,6 +46,8 @@ export const GET: RequestHandler = async ({ params, request: requestDisc, url })
     });
   }
 
+  // modify the last_visited
+
   // AUTH SUCCEDED => CHECK IF USER IN DB => ADD USER TO DB IF NOT
   // redirect user to front page with cookies set
   const access_token_expires_in = new Date(Date.now() + response.expires_in); // 10 minutes

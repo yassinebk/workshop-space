@@ -11,10 +11,16 @@
 
 <div class="v-section-spacer-md" />
 <main>
+	
 	<IntroSection />
 	<div class="v-section-spacer-md" />
+	<div>
 	<LessonCard />
+	</div>
 </main>
 
 <style>
+	.lesson-container{ 
+
+	}
 </style>
