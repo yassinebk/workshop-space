@@ -42,6 +42,8 @@ const upsertUserIntoDB = async (response: DiscordUser) => {
 export const load: LayoutServerLoad = async ({ request }) => {
     const cookies = cookie.parse(request.headers.get('cookie') || '');
 
+    console.log(request);
+
     // if only refresh token is found, then access token has expired. perform a refresh on it.
     if (cookies.disco_refresh_token && !cookies.disco_access_token) {
         const discord_request = await fetch(`${HOST}/api/refresh?code=${cookies.disco_refresh_token}`);

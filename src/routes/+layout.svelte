@@ -1,12 +1,18 @@
 <script lang="ts">
 	import Footer from '$lib/footer/Footer.svelte';
 	import Header from '$lib/header/Header.svelte';
+	import Sidebar from '$lib/header/Sidebar.svelte';
 	import '../app.css';
+	import { isMenuOpen } from '../lib/stores/sidebar';
 </script>
 
 <Header />
 
 <main>
+	{#if $isMenuOpen}
+		<Sidebar />
+		<!-- {:else} -->
+	{/if}
 	<slot />
 </main>
 

@@ -26,9 +26,9 @@
 				</div>
 				<h3>Devini</h3>
 			</div>
-			<div class="h-spacer-md" />
+			<div class="h-spacer-md hide-mobile" />
 			<h1>&</h1>
-			<div class="h-spacer-md" />
+			<div class="h-spacer-md hide-mobile" />
 			<div class="pill-container">
 				<div class="avatar" style="transform:scale(0.7);">
 					<img
@@ -84,18 +84,19 @@
 	.partnership-section {
 		display: flex;
 		align-items: center;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 	.devini-pill {
 		background-color: #1a2328;
 		color: white;
 		min-width: 232px;
+	color: yellow;
+		font-size: 1.24rem;
+
 	}
 
-	.devini-pill {
-		color: yellow;
-		font-size: 1.24rem;
-	}
 
 	h4 {
 		font-weight: 400;
@@ -103,5 +104,24 @@
 
 	.presented-by {
 		color: var(--main-black);
+	}
+
+	@media only screen and (max-width:900px){
+		.hide-mobile{
+			display:none;
+		}
+
+		.partnership-section{ 
+			display:flex;
+			flex-direction: column;
+		}
+
+		.section-outer-container{ 
+			max-width: 90vw;
+			padding:auto 12px;
+			margin:0 auto;
+			
+		}
+
 	}
 </style>

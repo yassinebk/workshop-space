@@ -39,6 +39,7 @@ export const GET: RequestHandler = async ({ params, request: requestDisc, url })
 
   // redirect to front page in case of error
   if (response.error) {
+    console.log('here')
     console.log('redirect to / due error');
     return new Response(null, {
       headers: { Location: '/' },
@@ -54,10 +55,11 @@ export const GET: RequestHandler = async ({ params, request: requestDisc, url })
   const refresh_token_expires_in = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days
   console.log('redirect to / with cookies');
 
+
   return new Response(null, {
     headers: {
       'set-cookie': `disco_access_token=${response.access_token}; Path=/; HttpOnly; SameSite=Strict; Expires=${access_token_expires_in}};` + `disco_refresh_token=${response.refresh_token}; Path=/; HttpOnly; SameSite=Strict; Expires=${refresh_token_expires_in}`,
-      location: '/'
+      location: '/logged_in'
     },
     status: 302,
     statusText: 'OK',

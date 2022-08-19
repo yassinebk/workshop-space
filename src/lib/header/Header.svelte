@@ -1,6 +1,10 @@
 <script lang="ts">
-	import { dataset_dev } from 'svelte/internal';
+	import { isMenuOpen } from '../stores/sidebar';
 	import AuthProfile from './AuthProfile.svelte';
+
+	function openSidebar() {
+		$isMenuOpen = true;
+	}
 </script>
 
 <header>
@@ -11,13 +15,13 @@
 			</a>
 			<div class="seperator" />
 		</div>
-		<ul class="navigations">
+		<ul class="navigations hide-mobile">
 			<li><a href="/">Home </a></li>
 			<li><a href="/workshops">Workshop</a></li>
 			<li><a href="/faq">FAQ</a></li>
 			<li><a href="/ressources">Ressources</a></li>
 		</ul>
-		<div class=" action-buttons">
+		<div class="action-buttons hide-mobile">
 			<button class="btn">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +45,27 @@
 				<p style="margin-left:6px;">Contact Instructor</p>
 			</button>
 			<AuthProfile />
+		</div>
+
+		<div class="hide-desktop burger-icon" on:click={openSidebar}>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="icon icon-tabler icon-tabler-menu-2"
+				width="32"
+				height="32"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="#a905b6"
+				fill="none"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			>
+				<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+				<line x1="4" y1="6" x2="20" y2="6" />
+				<line x1="4" y1="12" x2="20" y2="12" />
+				<line x1="4" y1="18" x2="20" y2="18" />
+			</svg>
+			<div />
 		</div>
 	</nav>
 </header>
@@ -111,5 +136,19 @@
 			background-position-y: 50vh;
 			background-image: linear-gradient(30deg, #fc00ff, #00dbde);
 		}
+	}
+
+	@media only screen and (max-width: 768px) {
+		.hide-mobile {
+			display: none;
+		}
+
+		.logo-ctr {
+			font-size: 1.5rem;
+		}
+	}
+
+	.burger-icon {
+		cursor: pointer;
 	}
 </style>
