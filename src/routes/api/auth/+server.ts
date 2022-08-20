@@ -8,7 +8,6 @@ const DISCORD_ENDPOINT = `https://discord.com/api/oauth2/authorize?client_id=${D
  * @type {import('@sveltejs/kit').RequestHandler}
  */
 export const GET: RequestHandler = async (request) => {
-  console.log(request);
 
 
   return new Response(null, {

@@ -59,7 +59,7 @@ export const GET: RequestHandler = async ({ params, request: requestDisc, url })
   return new Response(null, {
     headers: {
       'set-cookie': `disco_access_token=${response.access_token}; Path=/; HttpOnly; SameSite=Strict; Expires=${access_token_expires_in}};` + `disco_refresh_token=${response.refresh_token}; Path=/; HttpOnly; SameSite=Strict; Expires=${refresh_token_expires_in}`,
-      location: '/logged_in'
+      location: '/logged-in'
     },
     status: 302,
     statusText: 'OK',
