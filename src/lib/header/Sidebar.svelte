@@ -1,9 +1,7 @@
 <script lang="ts">
+	import { circIn } from 'svelte/easing';
+	import { fade, fly } from 'svelte/transition';
 	import { isMenuOpen } from '../stores/sidebar';
-	import { fly, fade } from 'svelte/transition';
-	import { backIn, circIn } from 'svelte/easing';
-	import { onMount } from 'svelte';
-	import { prevent_default } from 'svelte/internal';
 
 	function closeSidebar() {
 		$isMenuOpen = false;

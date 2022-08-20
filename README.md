@@ -1,15 +1,13 @@
-# Workshop Space 
+# Workshop Space
 
-## Features 
+## Features
 
-- Workshops content, exercices, ressources, etc 
-- FAQ 
+- Workshops content, exercices, ressources, etc
+- FAQ
 - Discord Server bot
 - Rankings
 
 ## Design ressources
-
-
 
 ```bash
 npm run dev

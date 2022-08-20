@@ -15,6 +15,7 @@
 	{/if}
 	<slot />
 </main>
+<div class="v-spacer-lg" />
 
 <Footer />
 

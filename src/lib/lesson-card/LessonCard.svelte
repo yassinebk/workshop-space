@@ -77,7 +77,7 @@
 		padding: 1rem 2rem;
 		width: 400px;
 		align-items: center;
-		font-size:10px;
+		font-size: 10px;
 	}
 
 	.lesson-img-ctr {
@@ -91,8 +91,6 @@
 		width: 100%;
 	}
 
-	.icon-bubble {
-	}
 	.lesson-info-text {
 		padding-left: 16px;
 		padding-right: 16px;
@@ -122,11 +120,11 @@
 		margin-left: 10px;
 	}
 
-	.special-border {
+	/* .special-border {
 		border: 2px solid rgb(249, 255, 80);
 		animation: camelion-border 5s infinite;
 		border-radius: 30px;
-	}
+	} */
 
 	@keyframes camelion-border {
 		50% {

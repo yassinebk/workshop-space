@@ -138,7 +138,7 @@
 		}
 	}
 
-	@media only screen and (max-width: 768px) {
+	@media only screen and (max-width: 900px) {
 		.hide-mobile {
 			display: none;
 		}
