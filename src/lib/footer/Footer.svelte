@@ -11,7 +11,7 @@
 	<div class="v-spacer-md" />
 	<div class="my-part">
 		<p>Buit With 🧡 from <a href="http://yassinebelkhadem.ninja">@F1r3creCk3r5</a></p>
-		<a href="/twitter"
+		<a href="https://twitter.com/YBK_FireLights"
 			><svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="icon icon-tabler icon-tabler-brand-twitter"
