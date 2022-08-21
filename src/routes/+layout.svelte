@@ -11,7 +11,6 @@
 <main>
 	{#if $isMenuOpen}
 		<Sidebar />
-		<!-- {:else} -->
 	{/if}
 	<slot />
 </main>

@@ -1,17 +1,14 @@
 <script lang="ts">
 	import type { WorkshopSession } from 'src/types/Models';
-	import type { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
 
 	export let workshop: Omit<WorkshopSession, 'id,createdAt,updatedAt,main_image'> & {
-		main_image: ImageUrlBuilder;
+		main_image: string;
 	};
-
-	console.log('session inside card', workshop);
 </script>
 
 <div class="lesson-card ">
 	<div class="lesson-img-ctr">
-		<img class="lesson-img" src={workshop.main_image.width(300).url()} alt="no " />
+		<img class="lesson-img" src={workshop.main_image} alt="no " />
 		<div class="icon-bubble" />
 	</div>
 	<div class="v-spacer-sm" />

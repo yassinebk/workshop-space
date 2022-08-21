@@ -1,9 +1,7 @@
 <script lang="ts">
 	import SvelteMarkdown from 'svelte-markdown';
-
 	export let data;
 	const { user, workshop } = data;
-	console.log(workshop);
 </script>
 
 <div class="v-section-spacer-md" />

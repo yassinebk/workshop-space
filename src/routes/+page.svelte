@@ -9,9 +9,6 @@
 			main_image: ImageUrlBuilder;
 		};
 	};
-
-	console.log(data.workshop);
-	let clientHeight: number;
 </script>
 
 <svelte:head>
@@ -22,9 +19,11 @@
 <div class="v-section-spacer-md" />
 <IntroSection />
 <div class="v-section-spacer-md" />
-<div class="card-2" bind:clientHeight>
+<div class="card-2">
 	<div class="left-col"><h1>Starting your learning journey here !</h1></div>
-	<div class="right-col"><LessonCard workshop={data.workshop} /></div>
+	<div class="right-col">
+		<LessonCard workshop={data.workshop} />
+	</div>
 </div>
 
 <style>

@@ -1,8 +1,7 @@
-import type { PageLoad } from './$types';
-export const prerender = true;
+import type { Load } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageLoad} */
-export const load: PageLoad = async ({ parent }) => {
+export const load: Load = async ({ parent }) => {
 	const { user } = await parent();
 	console.log(user);
 	return {
