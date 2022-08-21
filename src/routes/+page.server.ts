@@ -1,4 +1,3 @@
-export const prerender = true;
 
 import { initializeApiClient } from '$lib/sanity/client';
 import imageUrlBuilder from '@sanity/image-url';

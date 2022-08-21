@@ -1,4 +1,3 @@
-export const prerender = true;
 
 import type { ServerLoad } from '@sveltejs/kit';
 

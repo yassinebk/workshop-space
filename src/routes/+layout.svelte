@@ -4,6 +4,9 @@
 	import Sidebar from '$lib/header/Sidebar.svelte';
 	import '../app.css';
 	import { isMenuOpen } from '../lib/stores/sidebar';
+
+	export let data;
+	console.log(data)
 </script>
 
 <Header />
