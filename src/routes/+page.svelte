@@ -12,7 +12,6 @@
 
 	console.log(data.workshop);
 	let clientHeight: number;
-
 </script>
 
 <svelte:head>

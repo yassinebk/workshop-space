@@ -56,7 +56,7 @@ export type WorkshopSession = {
 	ressources: string;
 	views: Participant[];
 	date: string;
-	time: string
+	time: string;
 };
 
 export type WorkshopManager = {

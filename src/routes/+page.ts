@@ -1,20 +1,18 @@
 import { initializeApiClient } from '$lib/sanity/client';
 import type { PageLoad } from './$types';
 export const prerender = true;
-import imageUrlBuilder from '@sanity/image-url'
-
+import imageUrlBuilder from '@sanity/image-url';
 
 /** @type {import('./$types').PageLoad} */
 export const load: PageLoad = async ({ parent }) => {
 	const { user } = await parent();
 
-
 	const sanity = initializeApiClient();
 
-	const builder = imageUrlBuilder(sanity)
+	const builder = imageUrlBuilder(sanity);
 
 	function urlFor(source: string) {
-		return builder.image(source)
+		return builder.image(source);
 	}
 
 	const workshops = await sanity.fetch(
@@ -29,10 +27,7 @@ export const load: PageLoad = async ({ parent }) => {
 			    defined(_ref) =>{discord_id},
 			}
 		}`
-	)
-
-
-
+	);
 
 	return {
 		user,
@@ -42,5 +37,4 @@ export const load: PageLoad = async ({ parent }) => {
 		}
 		// ...
 	};
-
-}
+};
