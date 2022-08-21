@@ -65,7 +65,7 @@
 		<SvelteMarkdown source={workshop.Ressources} />
 	</div>
 {:else}
-	<div class="error-text">
+	<div class="error-text content">
 		<h1>You have to login and be registered to the course to access its content</h1>
 		<div class="v-spacer-md" />
 		<h3>Please login and if you have any problems contact the facebook page</h3>
