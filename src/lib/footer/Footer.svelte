@@ -60,6 +60,7 @@
 		display: flex;
 		width: 30%;
 		justify-content: space-evenly;
+		padding:0 1rem;
 	}
 
 	.navs li {
