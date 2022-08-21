@@ -61,6 +61,11 @@
 		width: 30%;
 		justify-content: space-evenly;
 	}
+
+	.navs li {
+		margin: 0px 0.25rem;
+	}
+
 	.navs li a {
 		transition: all 300ms ease-in-out;
 	}
