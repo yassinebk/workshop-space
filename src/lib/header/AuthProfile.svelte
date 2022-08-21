@@ -16,6 +16,8 @@
 	function desactiveHover() {
 		hover = false;
 	}
+
+	console.log($page);
 </script>
 
 <div class="profile-container" on:click={toggle}>
