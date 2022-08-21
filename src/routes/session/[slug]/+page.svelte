@@ -7,7 +7,7 @@
 </script>
 
 <div class="v-section-spacer-md" />
-{#if user}
+{#if user && user.confirmed}
 	<div>
 		<h1 class="session-title">{workshop.title}</h1>
 		<div class="v-spacer-md" />
@@ -91,13 +91,14 @@
 		width: 100%;
 	}
 	.error-text {
+		min-height: 580px;
 		width: 100%;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding-top: 20%;
+		padding-top: 5%;
 	}
 
 	.error-text h1 {

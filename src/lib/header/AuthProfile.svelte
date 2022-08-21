@@ -47,7 +47,11 @@
 			>
 				<ul>
 					<li class="gradient-text" style="cursor:text">Welcome {$page.data.user.username} 👋</li>
-					<li>Roles</li>
+					<li>
+						Points <span style="font-weight:600;color:var(--secondary)"
+							>{$page.data.user.points}
+						</span>
+					</li>
 					<a href="/api/signout"><li>Signout</li></a>
 				</ul>
 			</div>
