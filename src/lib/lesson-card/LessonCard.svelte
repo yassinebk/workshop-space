@@ -1,17 +1,24 @@
+<script lang="ts">
+	import type { WorkshopSession } from 'src/types/Models';
+	import type { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
+
+	export let workshop: Omit<WorkshopSession, 'id,createdAt,updatedAt,main_image'> & {
+		main_image: ImageUrlBuilder;
+	};
+
+	console.log('session inside card', workshop);
+</script>
+
 <div class="lesson-card ">
 	<div class="lesson-img-ctr">
-		<img
-			class="lesson-img"
-			src="https://images.unsplash.com/photo-1660116215414-ba8e600f4b03?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE1fHFQWXNEenZKT1ljfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-			alt=""
-		/>
+		<img class="lesson-img" src={workshop.main_image.width(300).url()} alt="no " />
 		<div class="icon-bubble" />
 	</div>
 	<div class="v-spacer-sm" />
 	<div class="lesson-info-text">
-		<h3>Lesson One Text should be here</h3>
+		<h3>{workshop.title}</h3>
 		<div class="v-spacer-sm" />
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, possimus nam voluptate</p>
+		<p>{workshop.title}</p>
 	</div>
 
 	<div class="v-spacer-sm" />
@@ -39,7 +46,7 @@
 				<line x1="11" y1="15" x2="12" y2="15" />
 				<line x1="12" y1="15" x2="12" y2="18" />
 			</svg>
-			<p>2022/09/03</p>
+			<p>{workshop.date}</p>
 		</div>
 		<div class="info-part">
 			<svg
@@ -60,13 +67,13 @@
 					d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7"
 				/>
 			</svg>
-			<p>10k Views</p>
+			<p>{workshop.views.length} Views</p>
 		</div>
 	</div>
 
 	<div class="v-spacer-md" />
 	<div class="action-buttons">
-		<button class="btn-white">Read</button>
+		<a href={`/session/${workshop.slug}`}><button class="btn-white">Read</button></a>
 	</div>
 </div>
 
@@ -143,10 +150,17 @@
 		width: 100%;
 	}
 
+	.action-buttons a {
+		justify-content: center;
+		display: flex;
+		width: 100%;
+		height: 100%;
+	}
+
 	.btn-white {
-		width: 85%;
 		margin: 0 auto;
 		height: 40px;
+		width: 85%;
 		border-radius: 30px;
 		background-color: transparent;
 		color: rgb(146, 146, 146);

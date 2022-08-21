@@ -1,14 +1,18 @@
 <script lang="ts">
 	import IntroSection from '$lib/homepage/intro-section.svelte';
 	import LessonCard from '$lib/lesson-card/LessonCard.svelte';
+	import type { WorkshopSession } from 'src/types/Models';
+	import type { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
 
+	export let data: {
+		workshop: Omit<WorkshopSession, 'id,createdAt,updatedAt,main_image'> & {
+			main_image: ImageUrlBuilder;
+		};
+	};
+
+	console.log(data.workshop);
 	let clientHeight: number;
-	$: console.log('clientHeight', clientHeight);
 
-	// const progress = tweened(0, {
-	// 	duration: 400,
-	// 	easing: cubicOut
-	// });
 </script>
 
 <svelte:head>
@@ -21,7 +25,7 @@
 <div class="v-section-spacer-md" />
 <div class="card-2" bind:clientHeight>
 	<div class="left-col"><h1>Starting your learning journey here !</h1></div>
-	<div class="right-col"><LessonCard /></div>
+	<div class="right-col"><LessonCard workshop={data.workshop} /></div>
 </div>
 
 <style>

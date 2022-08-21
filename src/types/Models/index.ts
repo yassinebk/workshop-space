@@ -46,14 +46,17 @@ export type Answer = {
 
 export type WorkshopSession = {
 	id: string;
-	status: 'happened' | 'to-happen';
+	slug: string;
+	main_image: string;
 	date_created: string;
 	date_updated: string;
 	title: string;
 	description: string;
 	content: string;
 	ressources: string;
-	viewed_by: Participant[] | null;
+	views: Participant[];
+	date: string;
+	time: string
 };
 
 export type WorkshopManager = {

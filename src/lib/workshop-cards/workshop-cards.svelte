@@ -8,7 +8,7 @@
 		time: string;
 		description: string;
 		date: string;
-		sessionLink: string;
+		sessionLink?: string;
 		color: string;
 	};
 
@@ -19,7 +19,7 @@
 			description:
 				'Making our very first steps, getting an idea on the overall track and talking the tactics that we will be using to succeed in our journey !',
 			date: '23 August 2k22',
-			sessionLink: '/',
+			sessionLink: '/session/the-world-wide-web',
 			color: 'var(--secondary)'
 		},
 		{
@@ -28,7 +28,6 @@
 			description:
 				'We will start learning the basics of making our very first website, HTML is the first milestone in our journey !',
 			date: '26 August 2k22',
-			sessionLink: '/',
 			color: '#FB98FD'
 		},
 		{
@@ -37,7 +36,6 @@
 			description:
 				'We will be discovering the secrets to make very beautiful websites. We will learn how to approach design files',
 			date: '30 August 2k22',
-			sessionLink: '/',
 			color: '#54C8DF'
 		},
 		{
@@ -46,7 +44,6 @@
 			description:
 				"We learned how to convert designs to code but how can we add some interactivity to our websites ? That's where CSS comes in !",
 			date: '2 September 2k22',
-			sessionLink: '/',
 			color: '#E28386'
 		},
 		{
@@ -55,7 +52,6 @@
 			description:
 				'Websites are all about services they offer. These services are features and need more advanced manipulation of website component HTML and CSS to become fully dynamic. Behold the power of JS !',
 			date: '6 September 2k22',
-			sessionLink: '/',
 			color: '#FEB310'
 		},
 		{
@@ -64,7 +60,6 @@
 			description:
 				'Everything is data. The color of your shirt, the content of the last post you tweeted, everything but from where does that data comes ? We will learn how to use APIs to get data from the internet. Then we will build our own !',
 			date: '9 September 2k22',
-			sessionLink: '/',
 			color: '#D46FCB'
 		},
 		{
@@ -73,7 +68,6 @@
 			description:
 				"It might have taken hours to debug a problem while it was a mispelled variable. That' a lot of time ! We will learn how to use Dev Tools to make the process of developing our websites more efficient and faster !",
 			date: '13 September 2k22',
-			sessionLink: '/',
 			color: '#8BE5B8'
 		}
 	];
@@ -128,25 +122,27 @@
 					<div class="v-spacer-lg" />
 					<div>
 						<div class="links">
-							<a href={workshop.sessionLink} class="session-link">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									class="icon icon-tabler icon-tabler-link"
-									width="32"
-									height="32"
-									viewBox="0 0 24 24"
-									stroke-width="1.5"
-									stroke="#8699EF"
-									fill="none"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								>
-									<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-									<path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
-									<path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
-								</svg>
-								<p>Session Content</p>
-							</a>
+							{#if workshop.sessionLink}
+								<a href={workshop.sessionLink} class="session-link">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										class="icon icon-tabler icon-tabler-link"
+										width="32"
+										height="32"
+										viewBox="0 0 24 24"
+										stroke-width="1.5"
+										stroke="#8699EF"
+										fill="none"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									>
+										<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+										<path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+										<path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+									</svg>
+									<p>Session Content</p>
+								</a>
+							{/if}
 						</div>
 					</div>
 				</div>
