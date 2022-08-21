@@ -2,11 +2,11 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		// setTimeout(() => {
-		// 	if (window && window.top) {
-		// 		window.top.location = '/';
-		// 	}
-		// }, 5000);
+		setTimeout(() => {
+			if (window && window.top) {
+				window.top.location = '/';
+			}
+		}, 5000);
 	});
 </script>
 
