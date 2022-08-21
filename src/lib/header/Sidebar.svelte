@@ -43,7 +43,7 @@
 	</ul>
 	<div class="v-spacer-lg" />
 	<div class="buttons-section">
-		{#if $page.data.user}
+		{#if !$page.data.user}
 			<a class="btn" transition:fly={{ delay: 880, easing: circIn }} href="/api/auth">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -92,6 +92,7 @@
 				<p style="margin-left:6px;">Signout</p>
 			</a>
 		{/if}
+		<div class="v-spacer-sm" />
 		<button class="btn" transition:fly={{ delay: 880, easing: circIn }}>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
