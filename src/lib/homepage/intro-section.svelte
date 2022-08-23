@@ -8,8 +8,13 @@
 		<div class="v-spacer-sm" />
 		<div style="max-width:700px">
 			<h4>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. A debitis voluptatem officia enim
-				sapiente pariatur aspernatur expedita veniam!
+				A workshop offered by <span style="font-weight:800"> Yassine Belkhadem </span> with the help
+				of the rising organization
+				<span style="font-weight:800"> Devini</span>. This workshop has not any financial motives it
+				only aims to give knowledge to the ones who seek it.
+				<span style="font-weight:800"
+					>Join us to learn the arts of weaving web apps at the fly !</span
+				>
 			</h4>
 		</div>
 		<div class="v-spacer-lg" />
