@@ -5,7 +5,7 @@
 </script>
 
 <div class="v-section-spacer-md" />
-{#if user && user.confirmed}
+{#if user}
 	<div class="content">
 		<h1 class="session-title">{workshop.title}</h1>
 		<div class="v-spacer-md" />
@@ -75,9 +75,8 @@
 {/if}
 
 <style>
-
-	.content { 
-		padding:1rem 1rem;
+	.content {
+		padding: 1rem 1rem;
 	}
 	.session-title {
 		text-transform: capitalize;
