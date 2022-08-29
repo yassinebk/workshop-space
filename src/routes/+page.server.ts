@@ -1,4 +1,3 @@
-
 import { initializeApiClient } from '$lib/sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 import type { ServerLoad } from '@sveltejs/kit';
@@ -7,7 +6,6 @@ import type { ServerLoad } from '@sveltejs/kit';
 
 export const load: ServerLoad = async ({ parent }) => {
 	const { user } = await parent();
-	console.log('user', user);
 
 	const sanity = initializeApiClient();
 

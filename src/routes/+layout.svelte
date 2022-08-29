@@ -6,7 +6,6 @@
 	import { isMenuOpen } from '../lib/stores/sidebar';
 
 	export let data;
-	console.log(data)
 </script>
 
 <Header />

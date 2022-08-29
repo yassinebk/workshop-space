@@ -28,7 +28,8 @@
 			description:
 				'We will start learning the basics of making our very first website, HTML is the first milestone in our journey !',
 			date: '26 August 2k22',
-			color: '#FB98FD'
+			color: '#FB98FD',
+			sessionLink: '/session/html-code',
 		},
 		{
 			topic: 'CSS 00 to 01',

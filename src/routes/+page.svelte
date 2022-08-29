@@ -4,6 +4,7 @@
 	import type { WorkshopSession } from 'src/types/Models';
 	import type { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
 
+
 	export let data: {
 		workshop: Omit<WorkshopSession, 'id,createdAt,updatedAt,main_image'> & {
 			main_image: ImageUrlBuilder;
