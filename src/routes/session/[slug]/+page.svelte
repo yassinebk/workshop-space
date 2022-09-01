@@ -5,7 +5,6 @@
 </script>
 
 <div class="v-section-spacer-md" />
-{#if user}
 	<div class="content">
 		<h1 class="session-title">{workshop.title}</h1>
 		<div class="v-spacer-md" />
@@ -64,15 +63,6 @@
 		<h1>Session Ressources & Links</h1>
 		<SvelteMarkdown source={workshop.Ressources} />
 	</div>
-{:else}
-	<div class="error-text content">
-		<h1>You have to login and be registered to the course to access its content</h1>
-		<div class="v-spacer-md" />
-		<h3>Please login and if you have any problems contact the facebook page</h3>
-		<div class="v-spacer-sm" />
-		<a href="/">Go back to home</a>
-	</div>
-{/if}
 
 <style>
 	.content {
